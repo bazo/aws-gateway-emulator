@@ -1,0 +1,8 @@
+version: 3
+
+tasks:
+  start:
+    - nr start
+
+  build:
+    - nr build
