@@ -1,8 +1,14 @@
 version: 3
 
 tasks:
-  start:
-    - nr start
+    dev:
+        cmds:
+            - nr dev
 
-  build:
-    - nr build
+    build:
+        cmds:
+            - nr build
+
+    add-cmp:
+        cmds:
+            - nlx shadcn-ui@latest add {{.CLI_ARGS}} -y

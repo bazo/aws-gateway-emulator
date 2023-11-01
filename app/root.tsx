@@ -1,5 +1,6 @@
 import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import Layout from "components/layout";
 
 import globalStylesheetUrl from "styles/app.css";
 
@@ -22,7 +23,9 @@ export default function App() {
 			</head>
 			<body>
 				{/* Child routes go here */}
-				<Outlet />
+				<Layout>
+					<Outlet />
+				</Layout>
 
 				{/* Manages scroll position for client-side transitions */}
 				{/* If you use a nonce-based content security policy for scripts, you must provide the `nonce` prop. Otherwise, omit the nonce prop as shown here. */}

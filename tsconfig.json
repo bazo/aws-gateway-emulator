@@ -1,6 +1,7 @@
 {
 	"include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
 	"compilerOptions": {
+		"types": ["bun-types"],
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"isolatedModules": true,
 		"esModuleInterop": true,
@@ -13,7 +14,8 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"paths": {
-			"*": ["./app/*"]
+			"*": ["./app/*"],
+			"@/*": ["./app/@/*"],
 		},
 
 		// Remix takes care of building everything in `remix build`.
