@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 import Layout from "components/layout";
 
-import globalStylesheetUrl from "styles/app.css";
+import globalStylesheetUrl from "styles/globals.css";
 
 export const links: LinksFunction = () => {
 	return [{ rel: "stylesheet", href: globalStylesheetUrl }];

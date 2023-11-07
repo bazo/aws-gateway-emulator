@@ -11,7 +11,7 @@ export default function Layout({ children }: PropsWithChildren) {
 				<div className="border-b">
 					<div className="flex h-16 items-center px-4">
 						{/* <TeamSwitcher />*/}
-						<img src="/logo.png" width={179} alt="Dashboard" />
+						{/* <img src="/logo.png" width={179} alt="Dashboard" /> */}
 						<MainNav className="mx-6" />
 						<div className="ml-auto flex items-center space-x-4">{/* <Search />*/}</div>
 					</div>

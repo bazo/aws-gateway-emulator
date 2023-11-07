@@ -35,8 +35,6 @@ export function readSettings(): Settings {
 export async function callLambda(request: Request) {
 	const settings = readSettings();
 
-	console.log({settings})
-
 	const routes = settings.apis;
 	const url = new URL(request.url);
 
@@ -55,7 +53,7 @@ export async function callLambda(request: Request) {
 		body,
 	};
 
-	return lambdaLocal.execute({
+	const res = await lambdaLocal.execute({
 		event,
 		lambdaPath: path.join(lambdaDir ?? __dirname, lambda.path),
 		//profilePath: '~/.aws/credentials',
@@ -65,4 +63,12 @@ export async function callLambda(request: Request) {
 		//timeoutMs: 3000,
 		lambdaHandler: lambda.handler ?? "handler",
 	});
+
+	return {
+		...res,
+		event,
+		lambdaName,
+		urlpath,
+		method: request.method
+	}
 }
