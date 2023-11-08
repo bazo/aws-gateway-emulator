@@ -6,6 +6,11 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 RUN apk update ; apk upgrade ; apk add --no-cache \
+  autoconf \
+  build-base \
+  coreutils \
+  libtool \
+  pkgconf \
   python3-dev
 
 # COPY package.json ./
