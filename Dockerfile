@@ -5,6 +5,9 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
+RUN apk update ; apk upgrade ; apk add --no-cache \
+  python3-dev
+
 # COPY package.json ./
 # COPY bun.lockb ./
 # COPY app ./
