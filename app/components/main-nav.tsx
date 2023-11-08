@@ -14,15 +14,6 @@ export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 				Overview
 			</NavLink>
 			<NavLink
-				to="/receipts"
-				className={({ isActive, isPending }) =>
-					`text-sm font-medium transition-colors hover:text-primary${isActive ? "" : " text-muted-foreground"}`
-				}
-			>
-				Customers
-			</NavLink>
-			
-			<NavLink
 				to="/settings"
 				className={({ isActive, isPending }) =>
 					`text-sm font-medium transition-colors hover:text-primary${isActive ? "" : " text-muted-foreground"}`

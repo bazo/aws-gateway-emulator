@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Requests } from "types";
-import { RequesPreview } from "./request-preview";
+import { RequestPreview } from "./request-preview";
 import dayjs from "dayjs";
 import localizedFormat from 'dayjs/plugin/localizedFormat.js';
 dayjs.extend(localizedFormat)
@@ -70,7 +70,7 @@ export function RequestList({ requests, page, onPageChange, pageCount, onRefresh
 					</div>
 				</div>
 				<div className="flex-1 p-6 overflow-auto">
-					<RequesPreview request={request} />
+					<RequestPreview request={request} />
 				</div>
 			</main>
 		</div>

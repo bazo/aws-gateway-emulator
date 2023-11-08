@@ -6,13 +6,22 @@ interface RequestPreviewProps {
 	request: Request | null;
 }
 
-export function RequesPreview({ request }: RequestPreviewProps) {
+export function RequestPreview({ request }: RequestPreviewProps) {
 	if (!request) {
 		return null;
 	}
 
 	const event = JSON.parse(request.request);
 
+	let showJsonResponse = true;
+	let response = request.response;
+
+	try {
+		response = JSON.parse(request.response);
+	} catch (e) {
+		console.log(e);
+		showJsonResponse = false;
+	}
 	return (
 		<>
 			<h2 className="text-lg font-medium mb-4">
@@ -34,7 +43,7 @@ export function RequesPreview({ request }: RequestPreviewProps) {
 				<div>
 					<h3 className="text-md font-semibold mb-2">Response</h3>
 					<div className="p-4 bg-gray-100 dark:bg-gray-800 rounded text-sm overflow-x-auto">
-						<JsonView data={JSON.parse(request.response)} shouldExpandNode={allExpanded} style={darkStyles} />
+						{showJsonResponse ? <JsonView data={response} shouldExpandNode={allExpanded} style={darkStyles} /> : <pre>{response}</pre>}
 					</div>
 				</div>
 			</div>
